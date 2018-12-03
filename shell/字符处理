@@ -52,3 +52,13 @@ ${file%/*}：删掉最后一个  /  及其右边的字符串：/dir1/dir2/dir3
 ${file%%/*}：删掉第一个 /  及其右边的字符串：(空值)
 ${file%.*}：删掉最后一个  .  及其右边的字符串：/dir1/dir2/dir3/my.file
 ${file%%.*}：删掉第一个  .   及其右边的字符串：/dir1/dir2/dir3/my
+
+定义变量 url="man.linuxde.net"
+echo ${url%.*}      #移除 .* 所匹配的最右边的内容。
+man.linuxde
+echo ${url%%.*}     #将从右边开始一直匹配到最左边的 *. 移除，贪婪操作符。
+man
+echo ${url#*.}      #移除 *. 所有匹配的最左边的内容。
+linuxde.net
+echo ${url##*.}     #将从左边开始一直匹配到最右边的 *. 移除，贪婪操作符。
+net
